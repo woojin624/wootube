@@ -1,4 +1,8 @@
 #root {
-    position: relative;
-    width: 100vw;
+  position: relative;
+  width: 100vw;
+}
+body {
+  background-color: #282828;
+  overflow-x: hidden;
 }
