@@ -1,0 +1,15 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#4E85F7",
+
+    "titleBar.inactiveBackground": "#4E85F7"
+  },
+  "workbench.editorAssociations": [],
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 200,
+  "prettier.tabWidth": 2,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true
+}

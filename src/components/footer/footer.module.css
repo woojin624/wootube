@@ -1,0 +1,8 @@
+.footer {
+    position: absolute;
+    left: 50%;
+    bottom: 4vh;
+    transform: translate(-50%, 0);
+    font-size: 1rem;
+    color: gray;
+}
