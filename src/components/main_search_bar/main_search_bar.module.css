@@ -1,102 +1,114 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-family: "Questrial", "Noto Sans KR", "sans-serif";
-    margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'Questrial', 'Noto Sans KR', 'sans-serif';
+  margin-bottom: 4rem;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo > .img {
-    width: 80px;
+  width: 80px;
 }
 
 .titleWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
 }
 
 .title {
-    /* color: #000; */
-    color: #fff;
-    font-size: 4rem;
+  /* color: #000; */
+  color: #fff;
+  font-size: 4rem;
 }
 .slogan {
-    /* color: #000; */
-    color: #fff;
-    font-size: 18px;
+  /* color: #000; */
+  color: #fff;
+  font-size: 18px;
 }
 
 .searchWrap {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    width: 70px;
-    /* width: 100%; */
-    height: 70px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 35px;
-    margin-top: 4rem;
-    padding: 0px;
-    border: 3px solid #4e86f77c;
-    cursor: pointer;
-    transition: 0.5s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 70px;
+  /* width: 100%; */
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 35px;
+  margin-top: 4rem;
+  padding: 0px;
+  border: 3px solid #4e86f77c;
+  cursor: pointer;
+  transition: 0.5s ease-out;
 }
 
 .input {
-    flex-basis: 75%;
-    font-size: 1.4rem;
-    font-weight: 700;
-    outline: 0;
-    background-color: transparent;
-    border: 0;
-    /* color: #000; */
-    color: #fff;
-    height: 70px;
-    width: 70px;
-    margin-left: 0rem;
-    cursor: pointer;
-    /* display: none; */
-    /* transform: scale(0.3); */
+  flex-basis: 75%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  outline: 0;
+  background-color: transparent;
+  border: 0;
+  /* color: #000; */
+  color: #fff;
+  height: 70px;
+  width: 70px;
+  margin-left: 0rem;
+  cursor: pointer;
+  /* display: none; */
+  /* transform: scale(0.3); */
+}
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
 }
 
 .button {
-    position: absolute;
-    right: 0;
-    background-color: transparent;
-    border: 0;
-    outline: 0;
-    width: 64px;
-    cursor: pointer;
-    padding: 0;
-    /* justify-self: flex-end; */
-    pointer-events: none;
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  width: 64px;
+  cursor: pointer;
+  padding: 0;
+  /* justify-self: flex-end; */
+  pointer-events: none;
 }
 
 .buttonImg {
-    width: 40px;
-    height: 100%;
-    padding: 0.2em;
+  width: 40px;
+  height: 100%;
+  padding: 0.2em;
 }
 .searchWrap.focus {
-    width: 100%;
-    cursor: auto;
-    margin-top: 2rem;
+  width: 100%;
+  cursor: auto;
+  margin-top: 2rem;
 }
 .searchWrap.focus > .input {
-    display: block;
-    margin-left: 2rem;
-    cursor: auto;
+  display: block;
+  margin-left: 2rem;
+  cursor: auto;
 }
 .searchWrap.focus > .button {
-    pointer-events: auto;
+  pointer-events: auto;
 }

@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import styles from './search_nav_bar.module.css';
 
-const SearchNavBar = ({ onSearch }) => {
+// 부모 컴포넌트로부터 history를 받아와서 logo가 onClick시 history.push('/')가 작동하도록 함
+const SearchNavBar = ({ onSearch, history }) => {
   const inputRef = useRef();
   const handleSearch = () => {
     const value = inputRef.current.value;
@@ -27,7 +28,13 @@ const SearchNavBar = ({ onSearch }) => {
   return (
     <header className={styles.header}>
       <nav className={styles.navWrap}>
-        <div className={styles.logo}>
+        <div
+          className={styles.logo}
+          onClick={() => {
+            // props로 받아온 history를 사용하여 메인으로 이동
+            history.push('/');
+          }}
+        >
           <img className={styles.img} src='/images/icon-logo.png' alt='logo' />
           <h1 className={styles.title}>WOOTUBE</h1>
         </div>
