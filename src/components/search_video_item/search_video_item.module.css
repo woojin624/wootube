@@ -1,8 +1,14 @@
 .video {
   max-width: 270px;
   width: 100%;
-  margin: 20px 15px;
   color: #fff;
+}
+
+.video.list {
+  margin: 20px 15px;
+}
+.video.grid {
+  margin: 10px 0px 0px 10px;
 }
 
 .thumbnail {

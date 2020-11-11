@@ -6,17 +6,20 @@ import styles from './search_video_item.module.css';
 // 부모 컴포넌트로부터 props을 받아온다 (videos)
 // 리스트 형식으로 li 태그를 사용하고 그 안에 썸네일과 제목, 채널 이름을 넣음
 
-const SearchVideoItem = (props) => (
-  <li className={styles.video}>
-    <img className={styles.thumbnail} src={props.video.snippet.thumbnails.medium.url} alt='video thumbnail' />
-    <div className={styles.contentWrap}>
-      <p className={styles.title}>{props.video.snippet.title}</p>
-      <div className={styles.channelWrap}>
-        {/* <img className={styles.channelIcon} src="" alt="" /> */}
-        <p className={styles.channel}>{props.video.snippet.channelTitle}</p>
+const SearchVideoItem = ({ video, video: { snippet }, onVideoClick, display }) => {
+  const displayType = display === 'list' ? styles.list : styles.grid;
+  return (
+    <li className={`${styles.video} ${displayType}`} onClick={() => onVideoClick(video)}>
+      <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt='video thumbnail' />
+      <div className={styles.contentWrap}>
+        <p className={styles.title}>{snippet.title}</p>
+        <div className={styles.channelWrap}>
+          {/* <img className={styles.channelIcon} src="" alt="" /> */}
+          <p className={styles.channel}>{snippet.channelTitle}</p>
+        </div>
       </div>
-    </div>
-  </li>
-);
+    </li>
+  );
+};
 
 export default SearchVideoItem;

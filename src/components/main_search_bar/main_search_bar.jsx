@@ -12,6 +12,10 @@ const MainSearchBar = ({ history }) => {
 
   // 메인 검색창 돋보기 모양을 누르면 포커스온이 된다
   // 포커스온이 되면 focus클래스가 추가되며 검색창이 길어진다
+
+  // ******포커스온이 되는 순간 형제 컴포넌트인 MainVideoList의 최상위 노드인 section.videolistWrap에 focus클래스를 추가해야한다**
+  // 본인 -> 형제로 전달을 해주거나
+  // 본인 -> 부모 -> 형제로 전달해주는 방법을 찾아야한다
   const searchFocusOn = () => {
     let className = searchWrap.current.className;
     // 사용하는 css가 postCSS이므로 일반적인 클래스 추가 방식이 아닌
@@ -28,6 +32,20 @@ const MainSearchBar = ({ history }) => {
     }
   };
 
+  // 인풋 태그에 전달해주는 함수
+  // 검색창에 무언가를 입력한 상태에서 엔터키를 누르면 mainToSearch 함수가 실행
+  const onKeyPress = (event) => {
+    if (event.key === 'Enter' && input.current.value !== '') {
+      mainToSearch();
+    }
+  };
+
+  // onKeyPress와 onClick에서 동시에 같은 함수가 일어나게 하기 위하여 분리시킨 함수
+  const mainToSearch = () => {
+    // props로 받아온 history를 사용하여 서치로 이동
+    history.push('/search');
+  };
+
   //
 
   return (
@@ -41,15 +59,8 @@ const MainSearchBar = ({ history }) => {
       </div>
       <div ref={searchWrap} className={styles.searchWrap}>
         {/* 인풋을 통하여 검색창의 인터랙션을 제어, onFocus와 onBlur */}
-        <input ref={input} className={styles.input} onFocus={searchFocusOn} onBlur={searchFocusOut} type='search' placeholder='' />
-        <button
-          className={styles.button}
-          onClick={() => {
-            // props로 받아온 history를 사용하여 서치로 이동
-            history.push('/search');
-          }}
-          type='submit'
-        >
+        <input ref={input} className={styles.input} onFocus={searchFocusOn} onBlur={searchFocusOut} onKeyPress={onKeyPress} type='search' placeholder='' />
+        <button className={styles.button} onClick={mainToSearch} type='submit'>
           <img className={styles.buttonImg} src='/images/icon-search-blue.png' alt='search' />
         </button>
       </div>

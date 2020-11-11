@@ -1,4 +1,19 @@
 .search {
   position: relative;
+
   /* display: none; */
+}
+.content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.detail {
+  flex: 1 1 70%;
+}
+
+.list {
+  flex: 1 1 30%;
 }
