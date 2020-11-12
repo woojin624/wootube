@@ -8,6 +8,8 @@ import styles from './search_video_item.module.css';
 
 const SearchVideoItem = ({ video, video: { snippet }, onVideoClick, display }) => {
   const displayType = display === 'list' ? styles.list : styles.grid;
+  console.log(display);
+
   return (
     <li className={`${styles.video} ${displayType}`} onClick={() => onVideoClick(video)}>
       <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt='video thumbnail' />

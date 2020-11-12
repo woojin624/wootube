@@ -11,9 +11,9 @@
 }
 
 .detail {
-  flex: 1 1 70%;
+  flex: 1 1 75%;
 }
 
 .list {
-  flex: 1 1 30%;
+  flex: 1 1 25%;
 }

@@ -9,6 +9,7 @@ const MainSearchBar = ({ history }) => {
   // console.log(history);
   const searchWrap = useRef();
   const input = useRef();
+  let searchValue;
 
   // 메인 검색창 돋보기 모양을 누르면 포커스온이 된다
   // 포커스온이 되면 focus클래스가 추가되며 검색창이 길어진다
@@ -30,6 +31,10 @@ const MainSearchBar = ({ history }) => {
       let className = styles.searchWrap;
       searchWrap.current.className = className;
     }
+
+    // 현재 검색창에 입력된 값 받아오기
+    searchValue = input.current.value;
+    console.log(searchValue);
   };
 
   // 인풋 태그에 전달해주는 함수

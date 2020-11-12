@@ -1,5 +1,5 @@
 .detail {
-  padding: 20px;
+  padding: 1.4rem 0 1rem 1rem;
 }
 
 .description {
@@ -7,13 +7,15 @@
 }
 
 .video {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
   font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }

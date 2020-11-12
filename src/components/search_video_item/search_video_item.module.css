@@ -2,13 +2,14 @@
   max-width: 270px;
   width: 100%;
   color: #fff;
+  cursor: pointer;
 }
 
 .video.list {
-  margin: 20px 15px;
+  margin: 1.4rem 1rem 0 14px;
 }
 .video.grid {
-  margin: 10px 0px 0px 10px;
+  margin: 20px 15px;
 }
 
 .thumbnail {
