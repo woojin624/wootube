@@ -6,9 +6,12 @@
   justify-content: center;
   align-items: flex-start;
   overflow: hidden;
+  transition: 600ms ease-in-out;
+  opacity: 1;
 }
 .videolistWrap.focus {
-  height: 26rem;
+  height: 0rem;
+  opacity: 0;
 }
 .sliderContainer {
   width: 41rem;
@@ -17,12 +20,17 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  transition: 600ms ease-in-out;
 }
+.videolistWrap.focus > .sliderContainer {
+  margin-top: -13rem;
+}
+
 .videolist {
   display: flex;
   position: relative;
   width: 41rem;
-  left: 0%;
+  left: -100%;
   transition: 0.3s ease-in;
 }
 

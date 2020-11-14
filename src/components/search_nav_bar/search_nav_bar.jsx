@@ -1,12 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from './search_nav_bar.module.css';
 
 // 부모 컴포넌트로부터 history를 받아와서 logo가 onClick시 history.push('/')가 작동하도록 함
-const SearchNavBar = ({ onSearch, history }) => {
+const SearchNavBar = ({ onSearch, history, getValue }) => {
   const inputRef = useRef();
   const handleSearch = () => {
     const value = inputRef.current.value;
     onSearch(value);
+    // value = 'asd';
   };
   const onClick = () => {
     handleSearch();
@@ -17,6 +18,11 @@ const SearchNavBar = ({ onSearch, history }) => {
       handleSearch();
     }
   };
+
+  // main_search_bar에서 받아온 값을 input의 value에 띄운다
+  useEffect(() => {
+    inputRef.current.value = getValue;
+  }, [getValue]);
 
   // 검색결과 화면의 상단에 위치하는 navbar를 보여준다
   // 큰 틀은 header태그를 사용하며 nav태그 안에서 로고와 타이틀, 그리고 검색을 하는 searchWrap영역이 있다

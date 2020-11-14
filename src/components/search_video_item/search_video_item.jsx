@@ -6,12 +6,9 @@ import styles from './search_video_item.module.css';
 // 부모 컴포넌트로부터 props을 받아온다 (videos)
 // 리스트 형식으로 li 태그를 사용하고 그 안에 썸네일과 제목, 채널 이름을 넣음
 
-const SearchVideoItem = ({ video, video: { snippet }, onVideoClick, display }) => {
-  const displayType = display === 'list' ? styles.list : styles.grid;
-  console.log(display);
-
+const SearchVideoItem = ({ video, video: { snippet }, onVideoClick }) => {
   return (
-    <li className={`${styles.video} ${displayType}`} onClick={() => onVideoClick(video)}>
+    <li className={styles.video} onClick={() => onVideoClick(video)}>
       <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt='video thumbnail' />
       <div className={styles.contentWrap}>
         <p className={styles.title}>{snippet.title}</p>

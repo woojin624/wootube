@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './play_video_detail.module.css';
+import styles from './play_video_screen.module.css';
 
-const PlayVideoDetail = ({ video, video: { snippet } }) => {
-  console.log(video);
+const PlayVideoScreen = ({ video }) => {
   return (
     <section className={styles.detail}>
       <iframe
@@ -15,11 +14,11 @@ const PlayVideoDetail = ({ video, video: { snippet } }) => {
         frameBorder='0'
         allowFullScreen
       ></iframe>
-      <h2>{snippet.title}</h2>
-      <h3>{snippet.channelTitle}</h3>
-      <pre className={styles.description}>{snippet.description}</pre>
+      <h2>{video.snippet.title}</h2>
+      <h3>{video.snippet.channelTitle}</h3>
+      <pre className={styles.description}>{video.snippet.description}</pre>
     </section>
   );
 };
 
-export default PlayVideoDetail;
+export default PlayVideoScreen;
