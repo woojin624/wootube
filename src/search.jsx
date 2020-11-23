@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import PlayVideoDetail from './components/play_video_detail/play_video_detail';
+//import PlayVideoDetail from './components/play_video_detail/play_video_detail';
 import SearchList from './components/search_list/search_list';
 import SearchNavBar from './components/search_nav_bar/search_nav_bar';
 import styles from './search.module.css';

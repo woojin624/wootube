@@ -11,6 +11,24 @@ const MainSearchBar = ({ history, handleClass, handleValue }) => {
   const input = useRef();
   let searchValue;
   let listClass;
+
+  // 인풋 태그에 전달해주는 함수
+  // 검색창에 무언가를 입력한 상태에서 엔터키를 누르면 mainToSearch 함수가 실행
+  const onKeyPress = (event) => {
+    if (event.key === 'Enter' && input.current.value !== '') {
+      mainToSearch();
+    }
+  };
+
+  // onKeyPress와 onClick에서 동시에 같은 함수가 일어나게 하기 위하여 분리시킨 함수
+  const mainToSearch = () => {
+    // props로 받아온 handleValue를 통해 현재 input에 입력된 값을 부모 컴포넌트에 전송
+    searchValue = input.current.value;
+    handleValue(searchValue);
+    // props로 받아온 history를 사용하여 서치로 이동
+    history.push('/search');
+  };
+
   // 메인 검색창 돋보기 모양을 누르면 포커스온이 된다
   // 포커스온이 되면 focus클래스가 추가되며 검색창이 길어진다
 
@@ -39,28 +57,7 @@ const MainSearchBar = ({ history, handleClass, handleValue }) => {
       // 부모컴포넌트로부터 받아와 작동시키는 함수
       handleClass(listClass);
     }
-
-    // 현재 검색창에 입력된 값 받아오기
   };
-
-  // 인풋 태그에 전달해주는 함수
-  // 검색창에 무언가를 입력한 상태에서 엔터키를 누르면 mainToSearch 함수가 실행
-  const onKeyPress = (event) => {
-    if (event.key === 'Enter' && input.current.value !== '') {
-      mainToSearch();
-    }
-  };
-
-  // onKeyPress와 onClick에서 동시에 같은 함수가 일어나게 하기 위하여 분리시킨 함수
-  const mainToSearch = () => {
-    // props로 받아온 handleValue를 통해 현재 input에 입력된 값을 부모 컴포넌트에 전송
-    searchValue = input.current.value;
-    handleValue(searchValue);
-    // props로 받아온 history를 사용하여 서치로 이동
-    history.push('/search');
-  };
-
-  //
 
   return (
     <header className={styles.header}>

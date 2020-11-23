@@ -1,0 +1,26 @@
+.listWrap {
+  flex: 1;
+  border: 1px solid #707070;
+}
+.listNameWrap {
+  display: flex;
+}
+.resultsListTop,
+.myListTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-size: 1.2rem;
+  height: 3rem;
+}
+.resultsListTop {
+  border-right: 1px solid #707070;
+}
+
+.listNameWrap > .myListTop {
+  border-bottom: 1px solid #707070;
+}
+.listNameWrap.active > .resultsListTop {
+  border-bottom: 1px solid #707070;
+}

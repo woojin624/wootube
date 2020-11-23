@@ -1,23 +1,28 @@
 import React, { useRef, useEffect } from 'react';
-import styles from './search_nav_bar.module.css';
+import styles from './play_nav_bar.module.css';
 
 // 부모 컴포넌트로부터 history를 받아와서 logo가 onClick시 history.push('/')가 작동하도록 함
-const SearchNavBar = ({ onSearch, history, getValue }) => {
+const PlayNavBar = ({ history, getValue, handleValue }) => {
   const inputRef = useRef();
-  const handleSearch = () => {
-    const value = inputRef.current.value;
-    onSearch(value);
-    history.push('/search');
-    // value = 'asd';
-  };
+  let value;
   const onClick = () => {
-    handleSearch();
+    playToSearch();
   };
 
   const onKeyPress = (event) => {
     if (event.key === 'Enter' && inputRef.current.value !== '') {
-      handleSearch();
+      playToSearch();
     }
+  };
+
+  // onKeyPress와 onClick에서 동시에 같은 함수가 일어나게 하기 위하여 분리시킨 함수
+  const playToSearch = () => {
+    value = inputRef.current.value;
+    // props로 받아온 handleValue를 통해 현재 input에 입력된 값을 부모 컴포넌트에 전송
+    handleValue(value);
+    history.push('/search');
+    // value = 'asd';
+    console.log(value);
   };
 
   // main_search_bar에서 받아온 값을 input의 value에 띄운다
@@ -25,7 +30,7 @@ const SearchNavBar = ({ onSearch, history, getValue }) => {
     inputRef.current.value = getValue;
   }, [getValue]);
 
-  // 검색결과 화면의 상단에 위치하는 navbar를 보여준다
+  // 플레이 화면의 상단에 위치하는 navbar를 보여준다
   // 큰 틀은 header태그를 사용하며 nav태그 안에서 로고와 타이틀, 그리고 검색을 하는 searchWrap영역이 있다
   // searchWrap영역안에는 검색할 것을 입력할 input태그와 값을 전달할 button태그로 이루어져 있으며
   // input에는 onKeyPress() 함수를, button에는 onClick() 함수를 주고 둘 다 handleSearch()라는 함수를 호출하게 된다
@@ -56,4 +61,4 @@ const SearchNavBar = ({ onSearch, history, getValue }) => {
   );
 };
 
-export default SearchNavBar;
+export default PlayNavBar;
