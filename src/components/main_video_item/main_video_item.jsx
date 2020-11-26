@@ -6,7 +6,7 @@ import styles from './main_video_item.module.css';
 
 const MainVideoItem = ({ video, onVideoClick }) => {
   let decode = require('unescape');
-  console.log(video);
+  // console.log(video);
   const clickVideo = () => {
     onVideoClick(video);
   };

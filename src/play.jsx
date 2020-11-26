@@ -24,18 +24,6 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
   // 비디오를 선택하면 선택한 비디오의 정보를 저장하고, 그 정보를 이용해서 비디오의 디테일을 보여준다
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  // app으로부터 받아온 getVideo로 state를 업데이트한다
-  useEffect(() => {
-    setSelectedVideo(getVideo);
-  }, [getVideo]);
-
-  const search = (query) => {
-    setSelectedVideo(null);
-    youtube
-      .search(query) //
-      .then((videos) => setVideos(videos));
-  };
-
   const handleValue = (e) => {
     getSearch(e);
   };
@@ -44,6 +32,20 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
   const handleVideo = (e) => {
     onVideoClick(e);
     history.push('/play');
+    console.log(e);
+  };
+
+  // app으로부터 받아온 getVideo로 state를 업데이트한다
+  useEffect(() => {
+    setSelectedVideo(getVideo);
+    console.log(getVideo);
+  }, [getVideo]);
+
+  const search = (query) => {
+    setSelectedVideo(null);
+    youtube
+      .search(query) //
+      .then((videos) => setVideos(videos));
   };
 
   return (

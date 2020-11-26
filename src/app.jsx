@@ -20,6 +20,7 @@ function App() {
 
   const selectVideo = (e) => {
     setSelectedVideo(e);
+    console.log(e);
   };
 
   return (
