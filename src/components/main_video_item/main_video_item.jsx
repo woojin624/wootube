@@ -5,6 +5,8 @@ import styles from './main_video_item.module.css';
 // props으로 받아온 값을 통해 비디오의 썸네일과 정보를 보여준다
 
 const MainVideoItem = ({ video, onVideoClick }) => {
+  let decode = require('unescape');
+  console.log(video);
   const clickVideo = () => {
     onVideoClick(video);
   };
@@ -14,7 +16,7 @@ const MainVideoItem = ({ video, onVideoClick }) => {
         <img className={styles.thumbnail} src={video.snippet.thumbnails.standard.url} alt='video thumbnails' />
       </figure>
       <div className={styles.info}>
-        <p className={styles.title}>{video.snippet.title}</p>
+        <p className={styles.title}>{decode(video.snippet.title)}</p>
         <p className={styles.channel}>{video.snippet.channelTitle}</p>
       </div>
     </li>

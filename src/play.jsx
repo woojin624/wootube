@@ -6,7 +6,7 @@ import PlayList from './components/play_list/play_list';
 import styles from './play.module.css';
 import PlayNavBar from './components/play_nav_bar/play_nav_bar';
 
-function Play({ youtube, getVideo, searchValue, getSearch }) {
+function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
   // main_search_bar에서 app.jsx까지 올라간 searchValue데이터를 부모로부터 받아왔다
   const [getValue, setGetValue] = useState();
   // 컴포넌트가 업데이트 됐을 때 setGetValue로 input창의 value값을 입력
@@ -40,6 +40,12 @@ function Play({ youtube, getVideo, searchValue, getSearch }) {
     getSearch(e);
   };
 
+  // 자식요소로부터 video로 정보를 받아오는 함수이면서 li요소 클릭시 play페이지로 이동시키는 함수
+  const handleVideo = (e) => {
+    onVideoClick(e);
+    history.push('/play');
+  };
+
   return (
     <>
       <PlayNavBar onSearch={search} handleValue={handleValue} history={history} getValue={getValue} />
@@ -47,10 +53,13 @@ function Play({ youtube, getVideo, searchValue, getSearch }) {
       {selectedVideo && (
         <div className={styles.play}>
           <div className={styles.playWrap}>
-            <PlayVideoScreen video={selectedVideo} />
+            <PlayVideoScreen video={selectedVideo} youtube={youtube} />
             <PlaySearchSection />
           </div>
-          <PlayList />
+          <PlayList
+            videos={videos} //
+            handleVideo={handleVideo}
+          />
         </div>
       )}
     </>

@@ -27,6 +27,18 @@ class Youtube {
     const result = await response.json();
     return result.items.map((item) => ({ ...item, id: item.id.videoId }));
   }
+
+  async videoDetail(id) {
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&part=contentDetails&part=statistics&id=${id}&key=${this.key}`, this.getRequestOptions);
+    const result = await response.json();
+    return result.items;
+  }
+
+  async channels(chId) {
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet&part=contentDetails&part=statistics&id=${chId}&key=${this.key}`, this.getRequestOptions);
+    const result = await response.json();
+    return result.items;
+  }
 }
 
 export default Youtube;

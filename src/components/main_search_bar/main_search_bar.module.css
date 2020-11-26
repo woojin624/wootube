@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
 .header {
   display: flex;
   flex-direction: column;
@@ -28,11 +30,13 @@
   /* color: #000; */
   color: #fff;
   font-size: 4rem;
+  font-family: 'Questrial', sans-serif;
 }
 .slogan {
   /* color: #000; */
   color: #fff;
   font-size: 18px;
+  font-family: 'Questrial', sans-serif;
 }
 
 .searchWrap {

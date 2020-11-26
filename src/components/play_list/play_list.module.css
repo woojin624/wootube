@@ -1,6 +1,7 @@
 .listWrap {
-  flex: 1;
+  flex: 2.5;
   border: 1px solid #707070;
+  position: relative;
 }
 .listNameWrap {
   display: flex;
@@ -12,10 +13,13 @@
   align-items: center;
   flex: 1;
   font-size: 1.2rem;
-  height: 3rem;
+  height: 3.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
 }
 .resultsListTop {
   border-right: 1px solid #707070;
+  cursor: pointer;
 }
 
 .listNameWrap > .myListTop {

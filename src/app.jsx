@@ -35,7 +35,7 @@ function App() {
         </Route>
         <Route path='/play'>
           {/* 플레이페이지 연결 */}
-          <Play youtube={youtube} getSearch={getValue} searchValue={searchValue} getVideo={selectedVideo} />
+          <Play youtube={youtube} getSearch={getValue} searchValue={searchValue} onVideoClick={selectVideo} getVideo={selectedVideo} />
         </Route>
       </Switch>
     </BrowserRouter>

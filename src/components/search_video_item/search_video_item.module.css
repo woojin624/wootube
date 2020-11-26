@@ -1,5 +1,5 @@
 .video {
-  max-width: 270px;
+  max-width: 300px;
   width: 100%;
   color: #fff;
   cursor: pointer;
@@ -7,7 +7,7 @@
 }
 
 .thumbnail {
-  max-width: 270px;
+  max-width: 300px;
   width: 100%;
 }
 
@@ -19,7 +19,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 18px;
+  font-weight: 500;
 }
 .channel {
   font-size: 14px;
+  font-weight: 300;
+  color: #dadada;
 }

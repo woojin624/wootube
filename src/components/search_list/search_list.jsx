@@ -7,12 +7,14 @@ import styles from './search_list.module.css';
 // unordered list 형식인 ul태그를 사용하고 그 안을 li인 video_item으로 채운다
 // 부모 컴포넌트로부터 props를 받아오며 받아온 props의 videos를 map을 통해 빙글빙글 돌며 하나의 비디오마다 id를 설정해준다
 
-const SearchList = ({ videos, handleVideo }) => (
-  <ul className={styles.list}>
-    {videos.map((video) => (
-      <SearchVideoItem key={video.id} video={video} onVideoClick={handleVideo} />
-    ))}
-  </ul>
-);
+const SearchList = ({ videos, handleVideo }) => {
+  return (
+    <ul className={styles.list}>
+      {videos.map((video) => (
+        <SearchVideoItem key={video.id} video={video} onVideoClick={handleVideo} />
+      ))}
+    </ul>
+  );
+};
 
 export default SearchList;
