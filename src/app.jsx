@@ -20,22 +20,22 @@ function App() {
 
   const selectVideo = (e) => {
     setSelectedVideo(e);
-    console.log(e);
+    // console.log(e);
   };
 
   return (
     <BrowserRouter>
       <Switch>
         <Route path={['/', '/main']} exact>
-          {/* 메인페이지 연결 */}
+          {/* connect Main */}
           <Main youtube={youtube} getValue={getValue} onVideoClick={selectVideo} />
         </Route>
         <Route path='/search'>
-          {/* 서치페이지 연결 */}
+          {/* connect Search */}
           <Search youtube={youtube} searchValue={searchValue} onVideoClick={selectVideo} />
         </Route>
         <Route path='/play'>
-          {/* 플레이페이지 연결 */}
+          {/* connect Play */}
           <Play youtube={youtube} getSearch={getValue} searchValue={searchValue} onVideoClick={selectVideo} getVideo={selectedVideo} />
         </Route>
       </Switch>

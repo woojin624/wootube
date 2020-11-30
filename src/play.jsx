@@ -38,7 +38,7 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
   // app으로부터 받아온 getVideo로 state를 업데이트한다
   useEffect(() => {
     setSelectedVideo(getVideo);
-    console.log(getVideo);
+    // console.log(getVideo);
   }, [getVideo]);
 
   const search = (query) => {
@@ -55,7 +55,7 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
       {selectedVideo && (
         <div className={styles.play}>
           <div className={styles.playWrap}>
-            <PlayVideoScreen video={selectedVideo} youtube={youtube} />
+            <PlayVideoScreen videoId={selectedVideo.id} channelId={selectedVideo.snippet.channelId} youtube={youtube} />
             <PlaySearchSection />
           </div>
           <PlayList
