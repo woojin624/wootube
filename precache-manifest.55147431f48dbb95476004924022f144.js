@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "77d2140921321293e4840752bbc696e4",
+    "revision": "a00c37d7784c8bc109e4c8194451cba5",
     "url": "/wootube/index.html"
   },
   {
-    "revision": "1fa583d95ff3bb941608",
+    "revision": "a920320eb388f3b7c085",
     "url": "/wootube/static/css/main.08e15257.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wootube/static/js/2.5c0c0119.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1fa583d95ff3bb941608",
-    "url": "/wootube/static/js/main.43c216ae.chunk.js"
+    "revision": "a920320eb388f3b7c085",
+    "url": "/wootube/static/js/main.3a99d8f6.chunk.js"
   },
   {
     "revision": "4d3a728c2e2bdcc5fd08",
