@@ -65,7 +65,7 @@ const MainSearchBar = ({ history, handleClass, handleValue }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img className={styles.img} src='/images/icon-logo.png' alt='logo' />
+        <img className={styles.img} src='./images/icon-logo.png' alt='logo' />
         <div className={styles.titleWrap}>
           <h1 className={styles.title}>WOOTUBE</h1>
           <p className={styles.slogan}>You can make your playlist on playing</p>
@@ -75,7 +75,7 @@ const MainSearchBar = ({ history, handleClass, handleValue }) => {
         {/* 인풋을 통하여 검색창의 인터랙션을 제어, onFocus와 onBlur */}
         <input ref={input} className={styles.input} onFocus={searchFocusOn} onBlur={searchFocusOut} onKeyPress={onKeyPress} type='search' placeholder='' />
         <button className={styles.button} onClick={mainToSearch} type='submit'>
-          <img className={styles.buttonImg} src='/images/icon-search-blue.png' alt='search' />
+          <img className={styles.buttonImg} src='./images/icon-search-blue.png' alt='search' />
         </button>
       </div>
     </header>

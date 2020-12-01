@@ -24,11 +24,11 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
   const desc = useRef();
   let activeMore = false;
   const moreDesc = (e) => {
-    if (activeMore == false) {
+    if (activeMore === false) {
       desc.current.className = `${classNames(styles.description)}`;
       e.currentTarget.innerText = '간략히';
       activeMore = true;
-    } else if (activeMore == true) {
+    } else if (activeMore === true) {
       desc.current.className = `${classNames(styles.description, styles.compact)}`;
       e.currentTarget.innerText = '더보기';
       activeMore = false;

@@ -47,13 +47,13 @@ const PlayNavBar = ({ history, getValue, handleValue }) => {
             history.push('/');
           }}
         >
-          <img className={styles.img} src='/images/icon-logo.png' alt='logo' />
+          <img className={styles.img} src='./images/icon-logo.png' alt='logo' />
           <h1 className={styles.title}>WOOTUBE</h1>
         </div>
         <div className={styles.searchWrap}>
           <input ref={inputRef} className={styles.input} type='search' placeholder='Search...' onKeyPress={onKeyPress} />
           <button className={styles.button} type='submit' onClick={onClick}>
-            <img className={styles.buttonImg} src='/images/icon-search-blue.png' alt='search' />
+            <img className={styles.buttonImg} src='./images/icon-search-blue.png' alt='search' />
           </button>
         </div>
       </nav>

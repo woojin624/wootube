@@ -18,9 +18,9 @@ const MainVideoList = ({ videos, focus, handleVideo }) => {
   // videolistWrap의 클래스를 바꾸어줄 함수
   const videolistActive = () => {
     // focus = eval(focus);
-    if (wrapClassFocus == false) {
+    if (wrapClassFocus === false) {
       videolistWrap.current.className = `${classNames(styles.videolistWrap, styles.focus)}`;
-    } else if (wrapClassFocus == true) {
+    } else if (wrapClassFocus === true) {
       videolistWrap.current.className = `${classNames(styles.videolistWrap)}`;
     }
     // console.log(className);

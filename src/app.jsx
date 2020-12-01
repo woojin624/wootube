@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename='/wootube'>
       <Switch>
         <Route path={['/', '/main']} exact>
           {/* connect Main */}
