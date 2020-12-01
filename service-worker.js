@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wootube/precache-manifest.55147431f48dbb95476004924022f144.js"
+  "/wootube/precache-manifest.92bf5f7290f349103bd534549e850963.js"
 );
 
 self.addEventListener('message', (event) => {

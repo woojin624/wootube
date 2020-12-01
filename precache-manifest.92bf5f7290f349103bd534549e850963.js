@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a00c37d7784c8bc109e4c8194451cba5",
+    "revision": "93b4cc7ed30969d5da10d3b7a19077bd",
     "url": "/wootube/index.html"
   },
   {
