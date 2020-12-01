@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path={['/', '/main']} exact>
           {/* connect Main */}
