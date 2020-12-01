@@ -36,9 +36,9 @@ function Search({ youtube, searchValue, onVideoClick }) {
     history.push('/play');
   };
 
-  // useEffect(() => {
-  //   youtube.mostPopular().then((videos) => setVideos(videos));
-  // }, [youtube]);
+  window.onload = function () {
+    history.push('/');
+  };
 
   return (
     <div className={styles.search}>

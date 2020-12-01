@@ -1,4 +1,5 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
 import styles from './play_video_screen.module.css';
 
 const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
@@ -15,10 +16,24 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
     youtube
       .channels(channelId) //
       .then((channel) => setChannel(channel));
-  }, [videoId, channelId]);
+  }, [videoId, channelId, youtube]);
 
   // channel && console.log("새로운 채널의 Id : ", channel[0].id);
   video && console.log('새로운 비디오의 Id : ', video[0].id);
+
+  const desc = useRef();
+  let activeMore = false;
+  const moreDesc = (e) => {
+    if (activeMore == false) {
+      desc.current.className = `${classNames(styles.description)}`;
+      e.currentTarget.innerText = '간략히';
+      activeMore = true;
+    } else if (activeMore == true) {
+      desc.current.className = `${classNames(styles.description, styles.compact)}`;
+      e.currentTarget.innerText = '더보기';
+      activeMore = false;
+    }
+  };
 
   //
   // title Symbols decoding
@@ -32,7 +47,6 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
     <>
       {video && (
         <section className={styles.detail}>
-          {/* <PlayVideoDetail video={video} channel={channel} youtube={youtube} /> */}
           <div className={styles.line}></div>
           <h2 className={styles.title}>{decode(video[0].snippet.title)}</h2>
           <div className={styles.aboutWrap}>
@@ -69,11 +83,17 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
             <img className={styles.channelIcon} src={channel[0].snippet.thumbnails.medium.url} alt='' />
             <h3 className={styles.channelTitle}>{video[0].snippet.channelTitle}</h3>
           </div>
-          <pre className={styles.description}>{video[0].snippet.description}</pre>
+          <pre ref={desc} className={classNames(styles.description, styles.compact)}>
+            {video[0].snippet.description}
+          </pre>
+          <span className={styles.more} onClick={moreDesc}>
+            더보기
+          </span>
+          <div className={styles.line}></div>
         </section>
       )}
     </>
   );
 });
-
+// .play_video_screen_description__39AEj.play_video_screen_compact__qBmwf
 export default PlayVideoScreen;

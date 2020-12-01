@@ -1,4 +1,5 @@
 import styles from './main_search_bar.module.css';
+import classNames from 'classnames';
 import React, { useRef } from 'react';
 
 // 메인화면에서 보이는 로고와 검색창을 담당하는 컴포넌트이다
@@ -36,12 +37,13 @@ const MainSearchBar = ({ history, handleClass, handleValue }) => {
   // 본인 -> 형제로 전달을 해주거나
   // 본인 -> 부모 -> 형제로 전달해주는 방법을 찾아야한다
   const searchFocusOn = () => {
-    let className = searchWrap.current.className;
     // 사용하는 css가 postCSS이므로 일반적인 클래스 추가 방식이 아닌
     // join을 통하여 클래스 이름을 연결시켜준다.
-    searchWrap.current.className = `${[className, styles.focus].join(' ')}`;
-
-    listClass = 'main_video_list_videolistWrap__2w75m main_video_list_focus__1dTQR';
+    // let className = searchWrap.current.className;
+    // searchWrap.current.className = `${[className, styles.focus].join(' ')}`;
+    searchWrap.current.className = `${classNames(styles.searchWrap, styles.focus)}`;
+    // listClass = 'main_video_list_videolistWrap__2w75m main_video_list_focus__1dTQR';
+    listClass = false;
     // 부모컴포넌트로부터 받아와 작동시키는 함수
     handleClass(listClass);
   };
@@ -50,10 +52,11 @@ const MainSearchBar = ({ history, handleClass, handleValue }) => {
   // 하지만 만약 어떠한 값이 입력되어 있으면 포커스가 나가도 현재상태를 유지
   const searchFocusOut = () => {
     if (input.current.value === '') {
-      let className = styles.searchWrap;
-      searchWrap.current.className = className;
-
-      listClass = 'main_video_list_videolistWrap__2w75m';
+      // let className = styles.searchWrap;
+      // searchWrap.current.className = className;
+      searchWrap.current.className = `${classNames(styles.searchWrap)}`;
+      // listClass = 'main_video_list_videolistWrap__2w75m';
+      listClass = true;
       // 부모컴포넌트로부터 받아와 작동시키는 함수
       handleClass(listClass);
     }

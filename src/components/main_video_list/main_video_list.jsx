@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import MainVideoItem from '../main_video_item/main_video_item';
+import classNames from 'classnames';
 import styles from './main_video_list.module.css';
 
 // 메인화면에서 인기영상을 보여주는 비디오 슬라이더이다
@@ -10,12 +11,18 @@ const MainVideoList = ({ videos, focus, handleVideo }) => {
   // -----업데이트 된 focus를 전달 받는 방법을 찾아야한다
   // console.log(focus);
 
+  let wrapClassFocus = focus;
   // section.videolistWrap을 ref로 받아온다
   const videolistWrap = useRef();
 
   // videolistWrap의 클래스를 바꾸어줄 함수
   const videolistActive = () => {
-    videolistWrap.current.className = focus;
+    // focus = eval(focus);
+    if (wrapClassFocus == false) {
+      videolistWrap.current.className = `${classNames(styles.videolistWrap, styles.focus)}`;
+    } else if (wrapClassFocus == true) {
+      videolistWrap.current.className = `${classNames(styles.videolistWrap)}`;
+    }
     // console.log(className);
   };
   // focus가 업데이트되고 videolistActive()함수를 실행시키기 위해 useEffect() 사용

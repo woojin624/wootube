@@ -16,7 +16,7 @@ function Main({ youtube, getValue, onVideoClick }) {
   }, [youtube]);
 
   // main_video_list의 클래스를 조작해줄 focus states
-  const [focus, setFocus] = useState('main_video_list_videolistWrap__2w75m');
+  const [focus, setFocus] = useState(true);
   // 자식 컴포넌트로부터 조작될 함수
   // search_nav_bar에서 클래스 이름을 바꿔서 가져오는 것까지 해결
   // setFocus를 써서 state변경

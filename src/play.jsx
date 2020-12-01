@@ -48,6 +48,10 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
       .then((videos) => setVideos(videos));
   };
 
+  window.onload = function () {
+    history.push('/');
+  };
+
   return (
     <>
       <PlayNavBar onSearch={search} handleValue={handleValue} history={history} getValue={getValue} />

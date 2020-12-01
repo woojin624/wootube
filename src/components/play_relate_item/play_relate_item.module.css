@@ -2,6 +2,10 @@
   display: flex;
   margin: 0.5rem;
   cursor: pointer;
+  background: transparent;
+  transition: 0.3s ease-in;
+  border-radius: 0rem;
+  border: 1px solid transparent;
 }
 
 .thumbWrap {
@@ -9,6 +13,9 @@
 }
 .thumbnail {
   width: 100%;
+  transition: 0.3s ease-in;
+  border-right: 1px solid transparent;
+  border-radius: 0rem;
 }
 .contentWrap {
   padding-left: 0.5rem;
@@ -16,6 +23,7 @@
 }
 .title {
   font-weight: 500;
+  margin-top: 0.2rem;
   margin-bottom: 0.5rem;
   line-height: 1.2;
   overflow: hidden;
@@ -23,6 +31,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  transition: 0.3s ease-in;
 }
 .channel {
   font-size: 0.8rem;
@@ -36,4 +45,15 @@
   height: 1px;
   margin: 0 auto;
   background: #707070;
+}
+
+.video:hover {
+  background: #00000080;
+  border: 1px solid #dadada;
+  border-radius: 0.8rem;
+}
+
+.video:hover .thumbnail {
+  border-right: 1px solid #dadada;
+  border-radius: 0.8rem 0rem 0rem 0.8rem;
 }

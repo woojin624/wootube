@@ -7,9 +7,11 @@ import styles from './main_video_item.module.css';
 const MainVideoItem = ({ video, onVideoClick }) => {
   let decode = require('unescape');
   // console.log(video);
+
   const clickVideo = () => {
     onVideoClick(video);
   };
+
   return (
     <li className={styles.video} onClick={clickVideo}>
       <figure className={styles.thumbWrap}>

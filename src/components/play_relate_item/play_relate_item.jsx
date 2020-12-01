@@ -4,9 +4,14 @@ import styles from './play_relate_item.module.css';
 const PlayRelateItem = ({ video, video: { snippet }, onVideoClick }) => {
   let decode = require('unescape');
 
+  const clickVideo = () => {
+    onVideoClick(video);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
-      <li className={styles.video} onClick={() => onVideoClick(video)}>
+      <li className={styles.video} onClick={clickVideo}>
         <div className={styles.thumbWrap}>
           <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt='video thumbnail' />
         </div>
