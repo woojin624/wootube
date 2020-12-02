@@ -5,6 +5,7 @@ import PlaySearchSection from './components/play_search_section/play_search_sect
 import PlayList from './components/play_list/play_list';
 import styles from './play.module.css';
 import PlayNavBar from './components/play_nav_bar/play_nav_bar';
+import PlaySearchList from './components/play_search_list/play_search_list';
 
 function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
   // main_search_bar에서 app.jsx까지 올라간 searchValue데이터를 부모로부터 받아왔다
@@ -41,6 +42,7 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
     // console.log(getVideo);
   }, [getVideo]);
 
+  // for PlayNavBar's function
   const search = (query) => {
     setSelectedVideo(null);
     youtube
@@ -52,6 +54,16 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
     history.push('/');
   };
 
+  const [playVideos, setPlayVideos] = useState(null);
+
+  // for PlaySearchList's function
+  const playSearch = (query) => {
+    // setSelectedVideo(null);
+    youtube
+      .playSearch(query) //
+      .then((playVideos) => setPlayVideos(playVideos));
+  };
+
   return (
     <>
       <PlayNavBar onSearch={search} handleValue={handleValue} history={history} getValue={getValue} />
@@ -60,7 +72,10 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
         <div className={styles.play}>
           <div className={styles.playWrap}>
             <PlayVideoScreen videoId={selectedVideo.id} channelId={selectedVideo.snippet.channelId} youtube={youtube} />
-            <PlaySearchSection />
+            <div className={styles.playSearchWrap}>
+              <PlaySearchSection onSearch={playSearch} getValue={getValue} />
+              <PlaySearchList videos={playVideos} handleVideo={handleVideo} youtube={youtube} />
+            </div>
           </div>
           <PlayList
             videos={videos} //

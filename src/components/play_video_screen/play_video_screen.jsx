@@ -26,11 +26,11 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
   const moreDesc = (e) => {
     if (activeMore === false) {
       desc.current.className = `${classNames(styles.description)}`;
-      e.currentTarget.innerText = '간략히';
+      e.currentTarget.innerText = 'SHOW LESS';
       activeMore = true;
     } else if (activeMore === true) {
       desc.current.className = `${classNames(styles.description, styles.compact)}`;
-      e.currentTarget.innerText = '더보기';
+      e.currentTarget.innerText = 'SHOW MORE';
       activeMore = false;
     }
   };
@@ -54,7 +54,7 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
               <h4 className={styles.viewCount}>
                 <i className='fas fa-play'></i> {numberWithCommas(video[0].statistics.viewCount)}
               </h4>
-              <h4 className={styles.date}>ㅣ 등록일 {video[0].snippet.publishedAt.substring(0, 10)}</h4>
+              <h4 className={styles.date}>ㅣ Premiered {video[0].snippet.publishedAt.substring(0, 10)}</h4>
             </div>
             <div className={styles.likeWrap}>
               <h4 className={styles.likeCount}>
@@ -87,7 +87,7 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
             {video[0].snippet.description}
           </pre>
           <span className={styles.more} onClick={moreDesc}>
-            더보기
+            SHOW MORE
           </span>
           <div className={styles.line}></div>
         </section>

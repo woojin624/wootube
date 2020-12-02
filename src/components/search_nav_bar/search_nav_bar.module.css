@@ -41,11 +41,11 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  flex-basis: 100%;
+  flex-basis: 60%;
   height: 2rem;
   padding: 0px;
   border: 2px solid #a4c1faa8;
-  margin-left: 3rem;
+  margin: 0 auto;
 }
 
 .input {

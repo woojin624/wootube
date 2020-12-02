@@ -1,0 +1,110 @@
+/* .video {
+  max-width: 300px;
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px 15px;
+  display: flex;
+}
+
+.thumbnail {
+  max-width: 300px;
+  width: 100%;
+}
+
+.title {
+  width: 100%;
+  padding: 0px;
+  margin: 8px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
+}
+.channel {
+  font-size: 14px;
+  font-weight: 300;
+  color: #dadada;
+} */
+.video {
+  display: flex;
+  margin: 0.6rem 0.5rem;
+  cursor: pointer;
+  background: transparent;
+  transition: 0.3s ease-in;
+  border-radius: 0rem;
+  border: 1px solid transparent;
+}
+
+.thumbWrap {
+  flex: 1;
+}
+.thumbnail {
+  width: 100%;
+  transition: 0.3s ease-in;
+  border-right: 1px solid transparent;
+  border-radius: 0rem;
+}
+.contentWrap {
+  padding-left: 0.6rem;
+  flex: 2;
+}
+.title {
+  font-weight: 500;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: 0.3s ease-in;
+}
+
+.viewDateWrap {
+  display: flex;
+  font-size: 0.8rem;
+  color: #dadada;
+  margin-bottom: 1rem;
+}
+
+.viewCount {
+  margin-right: 0.2rem;
+}
+
+.channelWrap {
+  display: flex;
+  align-items: center;
+}
+.channelIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.channel {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #dadada;
+}
+
+.line {
+  width: 95%;
+  height: 1px;
+  margin: 0 auto;
+  background: #707070;
+}
+
+.video:hover {
+  background: #00000080;
+  border: 1px solid #dadada;
+  /* border-radius: 0.8rem; */
+}
+
+.video:hover .thumbnail {
+  border-right: 1px solid #dadada;
+  /* border-radius: 0.8rem 0rem 0rem 0.8rem; */
+}
