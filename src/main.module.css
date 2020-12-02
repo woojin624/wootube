@@ -11,3 +11,9 @@
   background-color: #282828;
   /* display: none; */
 }
+
+@media screen and (max-width: 768px) {
+  .main {
+    height: auto;
+  }
+}

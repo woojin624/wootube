@@ -154,3 +154,37 @@
   transform: translate(-50%, -50%) rotate(-45deg);
   transition: 0.4s;
 }
+
+@media screen and (max-width: 768px) {
+  .arrowNav {
+    display: none;
+  }
+  .dotnav {
+    display: none;
+  }
+
+  .videolistWrap {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+  }
+  .videolistWrap.focus {
+    height: auto;
+    opacity: 1;
+  }
+  .sliderContainer {
+    height: auto;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .videolistWrap.focus > .sliderContainer {
+    margin-top: 0rem;
+  }
+
+  .videolist {
+    flex-direction: column;
+    align-items: center;
+    left: auto;
+  }
+}

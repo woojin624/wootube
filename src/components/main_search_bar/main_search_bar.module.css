@@ -116,3 +116,64 @@ input::-webkit-search-results-decoration {
 .searchWrap.focus > .button {
   pointer-events: auto;
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    margin-bottom: 2rem;
+  }
+  .logo {
+    margin-top: 3rem;
+  }
+  .logo > .img {
+    width: 60px;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .slogan {
+    font-size: 14px;
+  }
+
+  .searchWrap {
+    width: 50px;
+    /* width: 100%; */
+    height: 50px;
+    border-radius: 25px;
+    margin-top: 2rem;
+    padding: 0px;
+    border: 2px solid #4e86f77c;
+  }
+
+  .input {
+    flex-basis: 75%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    margin-left: 0rem;
+  }
+
+  .button {
+    right: 0;
+    border: 0;
+    outline: 0;
+    width: 44px;
+    padding: 0;
+  }
+
+  .buttonImg {
+    width: 28px;
+    height: 100%;
+    padding: 0.2em;
+  }
+  .searchWrap.focus {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .searchWrap.focus > .input {
+    margin-left: 2rem;
+  }
+  .searchWrap.focus > .button {
+  }
+}
