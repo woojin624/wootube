@@ -77,3 +77,21 @@
   height: 100%;
   width: 1.4rem;
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 3rem;
+  }
+  .navWrap {
+    padding: 0.8em 0.5em;
+    height: 3rem;
+  }
+  .img {
+    width: 1.8rem;
+  }
+  .title {
+    font-size: 1.2rem;
+    margin-left: 0.3rem;
+    font-family: 'Questrial', sans-serif;
+  }
+}

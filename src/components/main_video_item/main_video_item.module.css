@@ -72,18 +72,17 @@
     position: relative;
     top: 0;
     left: 0;
-    margin-top: 0.4rem;
+    margin-top: 0rem;
   }
   .title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 40rem;
     width: 90vw;
-    padding-bottom: 0.5rem;
-    margin-top: 0.2rem;
-    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+    margin: 8px 0;
   }
   .channel {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #dadada;
   }
 }

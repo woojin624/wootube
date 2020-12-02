@@ -8,10 +8,11 @@ import styles from './search_video_item.module.css';
 
 const SearchVideoItem = ({ video, video: { snippet }, onVideoClick }) => {
   let decode = require('unescape');
-
   return (
     <li className={styles.video} onClick={() => onVideoClick(video)}>
-      <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt='video thumbnail' />
+      <div className={styles.thumbWrap}>
+        <img className={styles.thumbnail} src={snippet.thumbnails.high.url} alt='video thumbnail' />
+      </div>
       <div className={styles.contentWrap}>
         <p className={styles.title}>{decode(snippet.title)}</p>
         <div className={styles.channelWrap}>
