@@ -1,4 +1,5 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
 import styles from './play_search_item.module.css';
 
 const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube }) => {
@@ -25,6 +26,14 @@ const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube 
     window.scrollTo(0, 0);
   };
 
+  const addBtn = useRef();
+
+  const onAddBtnClick = (e) => {
+    e.stopPropagation();
+    console.log(e);
+    addBtn.current.className = `${classNames(styles.addBtn, styles.active)}`;
+  };
+
   let decode = require('unescape');
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -45,6 +54,17 @@ const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube 
             <div className={styles.channelWrap}>
               <img className={styles.channelIcon} src={channel[0].snippet.thumbnails.medium.url} alt='' />
               <p className={styles.channel}>{getVideo[0].snippet.channelTitle}</p>
+            </div>
+          </div>
+          <div ref={addBtn} className={styles.addBtn} onClick={onAddBtnClick}>
+            <div className={styles.threeLine}>
+              <div className={styles.line1}></div>
+              <div className={styles.line2}></div>
+              <div className={styles.line3}></div>
+            </div>
+            <div className={styles.add}>
+              <div className={styles.hor}></div>
+              <div className={styles.ver}></div>
             </div>
           </div>
         </li>

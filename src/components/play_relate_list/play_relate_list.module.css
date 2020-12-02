@@ -1,3 +1,7 @@
 .list {
-  /* position: absolute; */
+  position: relative;
+  display: none;
+}
+.list.active {
+  display: block;
 }
