@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/wootube/static/css/main.516cef62.chunk.css",
-    "main.js": "/wootube/static/js/main.18b8ccef.chunk.js",
-    "main.js.map": "/wootube/static/js/main.18b8ccef.chunk.js.map",
+    "main.css": "/wootube/static/css/main.8d59753d.chunk.css",
+    "main.js": "/wootube/static/js/main.d9792ddf.chunk.js",
+    "main.js.map": "/wootube/static/js/main.d9792ddf.chunk.js.map",
     "runtime-main.js": "/wootube/static/js/runtime-main.6f3adbd1.js",
     "runtime-main.js.map": "/wootube/static/js/runtime-main.6f3adbd1.js.map",
     "static/js/2.8962fa35.chunk.js": "/wootube/static/js/2.8962fa35.chunk.js",
     "static/js/2.8962fa35.chunk.js.map": "/wootube/static/js/2.8962fa35.chunk.js.map",
     "index.html": "/wootube/index.html",
-    "precache-manifest.1ffe4491b7fdbdff38076a6d54d41da2.js": "/wootube/precache-manifest.1ffe4491b7fdbdff38076a6d54d41da2.js",
+    "precache-manifest.1aa5a526c124676de4683950f68813fc.js": "/wootube/precache-manifest.1aa5a526c124676de4683950f68813fc.js",
     "service-worker.js": "/wootube/service-worker.js",
-    "static/css/main.516cef62.chunk.css.map": "/wootube/static/css/main.516cef62.chunk.css.map",
+    "static/css/main.8d59753d.chunk.css.map": "/wootube/static/css/main.8d59753d.chunk.css.map",
     "static/js/2.8962fa35.chunk.js.LICENSE.txt": "/wootube/static/js/2.8962fa35.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6f3adbd1.js",
     "static/js/2.8962fa35.chunk.js",
-    "static/css/main.516cef62.chunk.css",
-    "static/js/main.18b8ccef.chunk.js"
+    "static/css/main.8d59753d.chunk.css",
+    "static/js/main.d9792ddf.chunk.js"
   ]
 }
