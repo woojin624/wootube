@@ -37,8 +37,8 @@ const MainVideoList = ({ videos, focus, handleVideo }) => {
 
   // videolist, dotNavEls를 ref로 받아온다
   const videolist = useRef();
-  const dotNavEls = useRef();
-
+  const dotNavEls = useRef([]);
+  console.log(dotNavEls);
   let slideId = 1;
 
   // 좌우 화살표의 기능을 맡는 함수
