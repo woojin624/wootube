@@ -7,7 +7,7 @@ const PlayRelateList = ({ videos, handleVideo, listClass }) => {
   // console.log(listClass);
 
   const list = useRef();
-
+  // result리스트와 myList를 토글로 번갈아가며 보여준다
   const listActive = () => {
     if (listClass === true) {
       list.current.className = `${classNames(styles.list, styles.active)}`;

@@ -2,9 +2,11 @@ import React from 'react';
 import styles from './play_my_item.module.css';
 
 const PlayMyItem = ({ myItem, onVideoClick }) => {
-  console.log(myItem.video);
+  // console.log(myItem.video);
+
   let decode = require('unescape');
 
+  // 비디오 클릭시 작동하는 함수 비디오를 재생하고 스크롤을 맨위로 올린다
   const clickVideo = () => {
     onVideoClick(myItem.video);
     window.scrollTo(0, 0);

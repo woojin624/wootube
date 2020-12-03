@@ -9,6 +9,7 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
   const [video, setVideo] = useState(null);
   const [channel, setChannel] = useState(null);
 
+  // 유튜브 api로부터 해당 비디오의 디테일과 채널정보를 받아온다
   useEffect(() => {
     youtube
       .videoDetail(videoId) //
@@ -21,8 +22,10 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
   // channel && console.log("새로운 채널의 Id : ", channel[0].id);
   // video && console.log('새로운 비디오의 Id : ', video[0].id);
 
+  // 설명부분
   const desc = useRef();
   let activeMore = false;
+  // 비디오의 설명 부분을 자세히, 간단히 로 토글하는 함수
   const moreDesc = (e) => {
     if (activeMore === false) {
       desc.current.className = `${classNames(styles.description)}`;

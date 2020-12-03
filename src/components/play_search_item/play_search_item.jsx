@@ -9,6 +9,7 @@ const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube,
   const [getVideo, setGetVideo] = useState(null);
   const [channel, setChannel] = useState(null);
 
+  // 유튜브 api로부터 해당 비디오의 디테일과 채널정보를 받아온다
   useEffect(() => {
     youtube
       .videoDetail(video.id) //
@@ -21,6 +22,7 @@ const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube,
   // channel && console.log("새로운 채널의 Id : ", channel[0].id);
   // getVideo && console.log('새로운 비디오의 Id : ', getVideo);
 
+  // 비디오 클릭시 작동하는 함수 비디오를 재생하고 스크롤을 맨위로 올린다
   const clickVideo = () => {
     onVideoClick(video);
     window.scrollTo(0, 0);
@@ -28,6 +30,9 @@ const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube,
 
   const addBtn = useRef();
 
+  // 검색결과에서 오른쪽 아래 리스트에 추가하는 아이콘을 누를 시 작동하는 함수
+  // 클릭 시 애니메이션이 작동하며
+  // 해당 영상의 정보를 플레이 리스트에 추가한다
   const onAddBtnClick = (e) => {
     e.stopPropagation();
     addBtn.current.className = `${classNames(styles.addBtn, styles.active)}`;

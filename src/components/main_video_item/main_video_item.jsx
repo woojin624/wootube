@@ -8,6 +8,7 @@ const MainVideoItem = ({ video, onVideoClick }) => {
   let decode = require('unescape');
   // console.log(video);
 
+  // 비디오 클릭 시 해당 비디오 재생하는 함수
   const clickVideo = () => {
     onVideoClick(video);
   };

@@ -4,6 +4,7 @@ import styles from './play_relate_item.module.css';
 const PlayRelateItem = ({ video, video: { snippet }, onVideoClick }) => {
   let decode = require('unescape');
 
+  // 비디오 클릭시 작동하는 함수 비디오를 재생하고 스크롤을 맨위로 올린다
   const clickVideo = () => {
     onVideoClick(video);
     window.scrollTo(0, 0);

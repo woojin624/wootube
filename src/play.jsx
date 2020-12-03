@@ -66,13 +66,15 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
 
   // myItems 배열을 스테이트로 생성
   const [myItems, setMyItems] = useState([]);
+  // addToList 아이콘을 누르면 작동하는 함수
+  // 플레이리스트에 해당 비디오를 추가한다
   const createMyListItem = (myItem) => {
     // setMyItems((myItem) => {
     //   const updated = { ...myItems };
     //   updated[myItem.id] = myItem;
     //   return updated;
     // });
-
+    // myItems 배열에 myItem을 추가
     setMyItems(myItems.concat(myItem));
   };
   return (

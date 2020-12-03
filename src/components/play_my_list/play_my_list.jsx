@@ -7,7 +7,7 @@ const PlayMyList = ({ videos, onVideoClick, listClass, handleVideo, myItems }) =
   // console.log(listClass);
 
   const list = useRef();
-
+  // result리스트와 myList를 토글로 번갈아가며 보여준다
   const listActive = () => {
     if (listClass === false) {
       list.current.className = `${classNames(styles.list, styles.active)}`;

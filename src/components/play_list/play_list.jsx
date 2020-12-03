@@ -7,6 +7,8 @@ import styles from './play_list.module.css';
 const PlayList = ({ videos, handleVideo, myItems }) => {
   const [listClass, setListClass] = useState(true);
   const listNameWrap = useRef();
+
+  // resultList와 myList를 토글로 번갈아가며 클래스를 추가 제거하여 변경한다
   const onResultsClick = () => {
     setListClass(true);
     listNameWrap.current.className = `${classNames(styles.listNameWrap)}`;
