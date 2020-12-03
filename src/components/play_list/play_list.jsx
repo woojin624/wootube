@@ -4,7 +4,7 @@ import PlayRelateList from '../play_relate_list/play_relate_list';
 import classNames from 'classnames';
 import styles from './play_list.module.css';
 
-const PlayList = ({ videos, handleVideo }) => {
+const PlayList = ({ videos, handleVideo, myItems }) => {
   const [listClass, setListClass] = useState(true);
   const listNameWrap = useRef();
   const onResultsClick = () => {
@@ -35,6 +35,7 @@ const PlayList = ({ videos, handleVideo }) => {
         videos={videos} //
         handleVideo={handleVideo}
         listClass={listClass}
+        myItems={myItems}
       />
     </div>
   );

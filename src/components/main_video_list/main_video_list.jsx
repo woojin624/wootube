@@ -1,7 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState, Component } from 'react';
 import MainVideoItem from '../main_video_item/main_video_item';
 import classNames from 'classnames';
 import styles from './main_video_list.module.css';
+import MainDot from './main_dot';
+// import styled from 'styled-components';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // 메인화면에서 인기영상을 보여주는 비디오 슬라이더이다
 // 기본 상태에서 리스트가 보이며 돋보기에 포커싱이 되었을 때
@@ -38,7 +43,8 @@ const MainVideoList = ({ videos, focus, handleVideo }) => {
   // videolist, dotNavEls를 ref로 받아온다
   const videolist = useRef();
   const dotNavEls = useRef([]);
-  console.log(dotNavEls);
+
+  // console.log(dotNavEls);
   let slideId = 1;
 
   // 좌우 화살표의 기능을 맡는 함수
@@ -62,6 +68,22 @@ const MainVideoList = ({ videos, focus, handleVideo }) => {
   // ul태그 안에서는 props로 받아온 videos를 map을 통해 각각 MainVideoItem에 id를 부여해준다
   // MainVideoItem에서 생성된 li들로 슬라이더를 채운다
 
+  const onDotClick = (e) => {
+    console.log(e.currentTarget);
+    console.log(dotNavs);
+  };
+
+  const dotNavs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  // dotNavs.length = 10;
+  // const dotNavList = dotNavs.map((dotNav) => (
+  //   <li>
+  //     <span onClick={onDotClick} ref={dotNavEls} key={dotNav} className={styles.dot}>
+  //       &nbsp;
+  //     </span>
+  //   </li>
+  // ));
+  // console.log(dotNavList);
+
   return (
     <section ref={videolistWrap} className={styles.videolistWrap}>
       <div className={styles.sliderContainer}>
@@ -70,6 +92,7 @@ const MainVideoList = ({ videos, focus, handleVideo }) => {
             <MainVideoItem key={video.id} video={video} onVideoClick={onVideoClick} />
           ))}
         </ul>
+
         <nav className={styles.arrowNav}>
           <ul>
             <li className={styles.prevBtn} onClick={mainSlidePrev}>
@@ -84,38 +107,9 @@ const MainVideoList = ({ videos, focus, handleVideo }) => {
         </nav>
         <nav className={styles.dotnav}>
           <ul>
-            <li>
-              <span ref={dotNavEls} className={styles.selected}>
-                &nbsp;
-              </span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
-            <li>
-              <span ref={dotNavEls}>&nbsp;</span>
-            </li>
+            {dotNavs.map((dotNav) => (
+              <MainDot key={dotNav} dotClick={onDotClick} />
+            ))}
           </ul>
         </nav>
       </div>

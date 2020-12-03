@@ -30,7 +30,7 @@
   display: flex;
   position: relative;
   width: 41rem;
-  left: -100%;
+  left: 0%;
   transition: 0.3s ease-in;
 }
 

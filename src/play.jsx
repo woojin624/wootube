@@ -64,6 +64,17 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
       .then((playVideos) => setPlayVideos(playVideos));
   };
 
+  // myItems 배열을 스테이트로 생성
+  const [myItems, setMyItems] = useState([]);
+  const createMyListItem = (myItem) => {
+    // setMyItems((myItem) => {
+    //   const updated = { ...myItems };
+    //   updated[myItem.id] = myItem;
+    //   return updated;
+    // });
+
+    setMyItems(myItems.concat(myItem));
+  };
   return (
     <>
       <PlayNavBar onSearch={search} handleValue={handleValue} history={history} getValue={getValue} />
@@ -74,12 +85,14 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
             <PlayVideoScreen videoId={selectedVideo.id} channelId={selectedVideo.snippet.channelId} youtube={youtube} />
             <div className={styles.playSearchWrap}>
               <PlaySearchSection onSearch={playSearch} getValue={getValue} />
-              <PlaySearchList videos={playVideos} handleVideo={handleVideo} youtube={youtube} />
+              <PlaySearchList videos={playVideos} handleVideo={handleVideo} youtube={youtube} addMyItem={createMyListItem} />
             </div>
           </div>
           <PlayList
+            myItems={myItems}
             videos={videos} //
             handleVideo={handleVideo}
+            addMyItem={createMyListItem}
           />
         </div>
       )}

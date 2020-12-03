@@ -63,14 +63,11 @@
   outline: 0;
   background-color: transparent;
   border: 0;
-  /* color: #000; */
   color: #fff;
   height: 70px;
   width: 70px;
   margin-left: 0rem;
   cursor: pointer;
-  /* display: none; */
-  /* transform: scale(0.3); */
 }
 input::-ms-clear,
 input::-ms-reveal {
@@ -172,8 +169,6 @@ input::-webkit-search-results-decoration {
     margin-top: 2rem;
   }
   .searchWrap.focus > .input {
-    margin-left: 2rem;
-  }
-  .searchWrap.focus > .button {
+    margin-left: 1rem;
   }
 }

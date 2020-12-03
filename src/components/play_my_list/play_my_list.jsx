@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import styles from './play_my_list.module.css';
+import PlayMyItem from '../play_my_item/play_my_item';
 
-const PlayMyList = ({ videos, onVideoClick, listClass }) => {
-  console.log(listClass);
+const PlayMyList = ({ videos, onVideoClick, listClass, handleVideo, myItems }) => {
+  // console.log(listClass);
 
   const list = useRef();
 
@@ -24,37 +25,11 @@ const PlayMyList = ({ videos, onVideoClick, listClass }) => {
     // onVideoClick(videos);
     window.scrollTo(0, 0);
   };
-
+  console.log(myItems);
   return (
     <ul ref={list} className={styles.list}>
-      {videos[4] && (
-        <li className={styles.video} onClick={clickVideo}>
-          <div className={styles.thumbWrap}>
-            <img className={styles.thumbnail} src={videos[4].snippet.thumbnails.medium.url} alt='video thumbnail' />
-          </div>
-          <div className={styles.contentWrap}>
-            <p className={styles.title}>{decode(videos[4].snippet.title)}</p>
-            <div className={styles.channelWrap}>
-              <p className={styles.channel}>{videos[4].snippet.channelTitle}</p>
-            </div>
-          </div>
-        </li>
-      )}
-      <div className={styles.line}></div>
-      {videos[2] && (
-        <li className={styles.video} onClick={clickVideo}>
-          <div className={styles.thumbWrap}>
-            <img className={styles.thumbnail} src={videos[2].snippet.thumbnails.medium.url} alt='video thumbnail' />
-          </div>
-          <div className={styles.contentWrap}>
-            <p className={styles.title}>{decode(videos[2].snippet.title)}</p>
-            <div className={styles.channelWrap}>
-              <p className={styles.channel}>{videos[2].snippet.channelTitle}</p>
-            </div>
-          </div>
-        </li>
-      )}
-      <div className={styles.line}></div>
+      {myItems && myItems.length > 0 && myItems.map((myItem) => <PlayMyItem key={myItem.id} myItem={myItem} onVideoClick={handleVideo} />)}
+      {/* {myItems.length !== 0 && <PlayMyItem key={myItems.id} myItem={myItems} onVideoClick={handleVideo} />} */}
     </ul>
   );
 };

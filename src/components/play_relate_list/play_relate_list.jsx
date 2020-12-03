@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './play_relate_list.module.css';
 
 const PlayRelateList = ({ videos, handleVideo, listClass }) => {
-  console.log(listClass);
+  // console.log(listClass);
 
   const list = useRef();
 

@@ -2,8 +2,8 @@ import React, { memo, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import styles from './play_search_item.module.css';
 
-const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube }) => {
-  console.log('프롭으로 받아온 videoId : ', video);
+const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube, addMyItem }) => {
+  // console.log('프롭으로 받아온 videoId : ', video);
   // console.log('프롭으로 받아온 channelId : ', channelId);
 
   const [getVideo, setGetVideo] = useState(null);
@@ -19,7 +19,7 @@ const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube 
   }, [video, youtube]);
 
   // channel && console.log("새로운 채널의 Id : ", channel[0].id);
-  getVideo && console.log('새로운 비디오의 Id : ', getVideo);
+  // getVideo && console.log('새로운 비디오의 Id : ', getVideo);
 
   const clickVideo = () => {
     onVideoClick(video);
@@ -30,8 +30,14 @@ const PlaySearchItem = memo(({ video, video: { snippet }, onVideoClick, youtube 
 
   const onAddBtnClick = (e) => {
     e.stopPropagation();
-    console.log(e);
     addBtn.current.className = `${classNames(styles.addBtn, styles.active)}`;
+    console.log(video);
+
+    const myItem = {
+      id: Date.now(),
+      video: video,
+    };
+    addMyItem(myItem);
   };
 
   let decode = require('unescape');

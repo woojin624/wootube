@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './play_video_screen.module.css';
 
 const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
-  console.log('프롭으로 받아온 videoId : ', videoId);
+  // console.log('프롭으로 받아온 videoId : ', videoId);
   // console.log('프롭으로 받아온 channelId : ', channelId);
 
   const [video, setVideo] = useState(null);
@@ -19,7 +19,7 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
   }, [videoId, channelId, youtube]);
 
   // channel && console.log("새로운 채널의 Id : ", channel[0].id);
-  video && console.log('새로운 비디오의 Id : ', video[0].id);
+  // video && console.log('새로운 비디오의 Id : ', video[0].id);
 
   const desc = useRef();
   let activeMore = false;
