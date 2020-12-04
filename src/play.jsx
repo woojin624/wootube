@@ -7,7 +7,7 @@ import styles from './play.module.css';
 import PlayNavBar from './components/play_nav_bar/play_nav_bar';
 import PlaySearchList from './components/play_search_list/play_search_list';
 
-function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick, addMyItem, myItems }) {
+function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick, addMyItem, myItems, delMyItem }) {
   // main_search_bar에서 app.jsx까지 올라간 searchValue데이터를 부모로부터 받아왔다
   const [getValue, setGetValue] = useState();
   // 컴포넌트가 업데이트 됐을 때 setGetValue로 input창의 value값을 입력
@@ -82,6 +82,7 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick, addMyIt
             videos={videos} //
             handleVideo={handleVideo}
             addMyItem={addMyItem}
+            delMyItem={delMyItem}
           />
         </div>
       )}

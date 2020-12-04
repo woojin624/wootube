@@ -6,6 +6,7 @@
   transition: 0.3s ease-in;
   border-radius: 0rem;
   border: 1px solid transparent;
+  position: relative;
 }
 
 .thumbWrap {
@@ -50,10 +51,57 @@
 .video:hover {
   background: #00000080;
   border: 1px solid #dadada;
-  border-radius: 0.8rem;
+  border-radius: 0rem;
 }
 
 .video:hover .thumbnail {
   border-right: 1px solid #dadada;
-  border-radius: 0.8rem 0rem 0rem 0.8rem;
+  border-radius: 0rem;
+}
+
+.delBtn {
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.7rem;
+  /* padding: 2px; */
+  /* height: 24px; */
+  /* width: 30px; */
+  font-size: 1.1rem;
+  z-index: 9999;
+  cursor: pointer;
+  display: block;
+  color: #707070;
+}
+
+.delBtn.active {
+  pointer-events: none;
+  animation: delBtnActive 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes delBtnActive {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(20deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(-20deg) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  99% {
+    transform: rotate(0deg) scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
 }

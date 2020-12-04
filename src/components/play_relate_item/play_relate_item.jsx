@@ -18,7 +18,6 @@ const PlayRelateItem = memo(({ video, video: { snippet }, onVideoClick, addMyIte
   // 해당 영상의 정보를 플레이 리스트에 추가한다
   const onAddBtnClick = (e) => {
     e.stopPropagation();
-    addBtn.current.className = `${classNames(styles.addBtn, styles.active)}`;
     console.log(video);
 
     const myItem = {
@@ -26,6 +25,10 @@ const PlayRelateItem = memo(({ video, video: { snippet }, onVideoClick, addMyIte
       video: video,
     };
     addMyItem(myItem);
+    addBtn.current.className = `${classNames(styles.addBtn, styles.active)}`;
+    setTimeout(() => {
+      addBtn.current.className = `${classNames(styles.addBtn, styles.actived)}`;
+    }, 600);
   };
 
   return (

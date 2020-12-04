@@ -4,7 +4,7 @@ import PlayRelateList from '../play_relate_list/play_relate_list';
 import classNames from 'classnames';
 import styles from './play_list.module.css';
 
-const PlayList = memo(({ videos, handleVideo, myItems, addMyItem }) => {
+const PlayList = memo(({ videos, handleVideo, myItems, addMyItem, delMyItem }) => {
   const [listClass, setListClass] = useState(true);
   const listNameWrap = useRef();
 
@@ -39,6 +39,7 @@ const PlayList = memo(({ videos, handleVideo, myItems, addMyItem }) => {
         handleVideo={handleVideo}
         listClass={listClass}
         myItems={myItems}
+        delMyItem={delMyItem}
       />
     </div>
   );

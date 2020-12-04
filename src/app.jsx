@@ -35,6 +35,12 @@ function App() {
     // });
     // myItems 배열에 myItem을 추가
     setMyItems(myItems.concat(myItem));
+    console.log(myItems);
+  };
+
+  const deleteMyListItem = (item) => {
+    setMyItems(myItems.filter((myItem) => myItem.id !== item.id));
+    console.log(myItems);
   };
 
   return (
@@ -50,7 +56,16 @@ function App() {
         </Route>
         <Route path='/play'>
           {/* connect Play */}
-          <Play youtube={youtube} getSearch={getValue} searchValue={searchValue} onVideoClick={selectVideo} getVideo={selectedVideo} addMyItem={createMyListItem} myItems={myItems} />
+          <Play
+            youtube={youtube}
+            getSearch={getValue}
+            searchValue={searchValue}
+            onVideoClick={selectVideo}
+            getVideo={selectedVideo}
+            addMyItem={createMyListItem}
+            myItems={myItems}
+            delMyItem={deleteMyListItem}
+          />
         </Route>
       </Switch>
     </BrowserRouter>
