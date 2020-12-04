@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b2832ec8607aef8f2a7add7548b14db",
+    "revision": "13453cd1c248e04d5cfba369fb6230de",
     "url": "/wootube/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wootube/static/css/2.7cf9795a.chunk.css"
   },
   {
-    "revision": "cc8a250e0e72c3a4cd00",
-    "url": "/wootube/static/css/main.987078ff.chunk.css"
+    "revision": "31f51e180c4ef836cdcc",
+    "url": "/wootube/static/css/main.39c1a75f.chunk.css"
   },
   {
     "revision": "57834831500eb9167423",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wootube/static/js/2.0c14cc10.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cc8a250e0e72c3a4cd00",
-    "url": "/wootube/static/js/main.8b578599.chunk.js"
+    "revision": "31f51e180c4ef836cdcc",
+    "url": "/wootube/static/js/main.508699cb.chunk.js"
   },
   {
     "revision": "4d3a728c2e2bdcc5fd08",
