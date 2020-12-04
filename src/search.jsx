@@ -5,7 +5,7 @@ import SearchList from './components/search_list/search_list';
 import SearchNavBar from './components/search_nav_bar/search_nav_bar';
 import styles from './search.module.css';
 
-function Search({ youtube, searchValue, onVideoClick }) {
+function Search({ youtube, searchValue, onVideoClick, addMyItem }) {
   // main_search_bar에서 app.jsx까지 올라간 searchValue데이터를 부모로부터 받아왔다
   const [getValue, setGetValue] = useState();
   // 컴포넌트가 업데이트 됐을 때 setGetValue로 input창의 value값을 입력
@@ -49,6 +49,7 @@ function Search({ youtube, searchValue, onVideoClick }) {
           <SearchList
             videos={videos} //
             handleVideo={handleVideo}
+            addMyItem={addMyItem}
           />
         </div>
       </section>

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PlaySearchItem from '../play_search_item/play_search_item';
 import SearchVideoItem from '../search_video_item/search_video_item';
 import styles from './play_search_list.module.css';
 
-const PlaySearchList = ({ videos, handleVideo, youtube, addMyItem }) => {
+const PlaySearchList = memo(({ videos, handleVideo, youtube, addMyItem }) => {
   console.log(videos);
   return (
     <>
@@ -16,6 +16,6 @@ const PlaySearchList = ({ videos, handleVideo, youtube, addMyItem }) => {
       )}
     </>
   );
-};
+});
 
 export default PlaySearchList;

@@ -7,7 +7,7 @@ import styles from './play.module.css';
 import PlayNavBar from './components/play_nav_bar/play_nav_bar';
 import PlaySearchList from './components/play_search_list/play_search_list';
 
-function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
+function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick, addMyItem, myItems }) {
   // main_search_bar에서 app.jsx까지 올라간 searchValue데이터를 부모로부터 받아왔다
   const [getValue, setGetValue] = useState();
   // 컴포넌트가 업데이트 됐을 때 setGetValue로 input창의 value값을 입력
@@ -64,19 +64,6 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
       .then((playVideos) => setPlayVideos(playVideos));
   };
 
-  // myItems 배열을 스테이트로 생성
-  const [myItems, setMyItems] = useState([]);
-  // addToList 아이콘을 누르면 작동하는 함수
-  // 플레이리스트에 해당 비디오를 추가한다
-  const createMyListItem = (myItem) => {
-    // setMyItems((myItem) => {
-    //   const updated = { ...myItems };
-    //   updated[myItem.id] = myItem;
-    //   return updated;
-    // });
-    // myItems 배열에 myItem을 추가
-    setMyItems(myItems.concat(myItem));
-  };
   return (
     <>
       <PlayNavBar onSearch={search} handleValue={handleValue} history={history} getValue={getValue} />
@@ -87,14 +74,14 @@ function Play({ youtube, getVideo, searchValue, getSearch, onVideoClick }) {
             <PlayVideoScreen videoId={selectedVideo.id} channelId={selectedVideo.snippet.channelId} youtube={youtube} />
             <div className={styles.playSearchWrap}>
               <PlaySearchSection onSearch={playSearch} getValue={getValue} />
-              <PlaySearchList videos={playVideos} handleVideo={handleVideo} youtube={youtube} addMyItem={createMyListItem} />
+              <PlaySearchList videos={playVideos} handleVideo={handleVideo} youtube={youtube} addMyItem={addMyItem} />
             </div>
           </div>
           <PlayList
             myItems={myItems}
             videos={videos} //
             handleVideo={handleVideo}
-            addMyItem={createMyListItem}
+            addMyItem={addMyItem}
           />
         </div>
       )}

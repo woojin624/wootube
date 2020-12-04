@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 import styles from './search_nav_bar.module.css';
 
 // 부모 컴포넌트로부터 history를 받아와서 logo가 onClick시 history.push('/')가 작동하도록 함
-const SearchNavBar = ({ onSearch, history, getValue }) => {
+const SearchNavBar = memo(({ onSearch, history, getValue }) => {
   const inputRef = useRef();
   const handleSearch = () => {
     const value = inputRef.current.value;
@@ -54,6 +54,6 @@ const SearchNavBar = ({ onSearch, history, getValue }) => {
       </nav>
     </header>
   );
-};
+});
 
 export default SearchNavBar;

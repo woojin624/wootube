@@ -9,6 +9,22 @@
   position: relative;
 }
 
+/* .thumbWrap {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+  overflow: hidden;
+  height: calc(300px / 16 * 9);
+  flex: 1;
+}
+.thumbnail {
+  max-width: 300px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+} */
+
 .thumbWrap {
   flex: 1;
 }
@@ -203,4 +219,46 @@
 }
 .addBtn.active > .add > div.ver {
   transform: translate(-50%, -200%) rotate(45deg);
+}
+
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+  .video {
+    margin: 0.6rem 0rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .video {
+    margin: 0.6rem 0rem;
+    flex-direction: column;
+  }
+  .contentWrap {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.3rem;
+    flex: 2;
+  }
+  .title {
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+  .channelWrap {
+    margin-bottom: 0.6rem;
+  }
+  .channelIcon {
+    width: 24px;
+    height: 24px;
+  }
+  .channel {
+    font-size: 0.9rem;
+  }
+  .viewDateWrap {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.2rem;
+    order: 2;
+  }
+  .addBtn {
+    bottom: 0.1rem;
+    right: 0.5rem;
+  }
 }

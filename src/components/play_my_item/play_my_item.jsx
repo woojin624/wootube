@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './play_my_item.module.css';
 
-const PlayMyItem = ({ myItem, onVideoClick }) => {
+const PlayMyItem = memo(({ myItem, onVideoClick }) => {
   // console.log(myItem.video);
 
   let decode = require('unescape');
@@ -29,6 +29,6 @@ const PlayMyItem = ({ myItem, onVideoClick }) => {
       <div className={styles.line}></div>
     </>
   );
-};
+});
 
 export default PlayMyItem;

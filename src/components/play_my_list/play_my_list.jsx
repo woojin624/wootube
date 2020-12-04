@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import styles from './play_my_list.module.css';
 import PlayMyItem from '../play_my_item/play_my_item';
 
-const PlayMyList = ({ videos, onVideoClick, listClass, handleVideo, myItems }) => {
+const PlayMyList = memo(({ videos, onVideoClick, listClass, handleVideo, myItems }) => {
   // console.log(listClass);
 
   const list = useRef();
@@ -32,6 +32,6 @@ const PlayMyList = ({ videos, onVideoClick, listClass, handleVideo, myItems }) =
       {/* {myItems.length !== 0 && <PlayMyItem key={myItems.id} myItem={myItems} onVideoClick={handleVideo} />} */}
     </ul>
   );
-};
+});
 
 export default PlayMyList;

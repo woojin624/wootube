@@ -37,7 +37,6 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
       activeMore = false;
     }
   };
-
   //
   // title Symbols decoding
   let decode = require('unescape');
@@ -48,7 +47,7 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
 
   return (
     <>
-      {video && (
+      {video && channel && (
         <section className={styles.detail}>
           <div className={styles.line}></div>
           <h2 className={styles.title}>{decode(video[0].snippet.title)}</h2>
@@ -80,7 +79,6 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
               allowFullScreen
             ></iframe>
           </div>
-
           <div className={styles.line}></div>
           <div className={styles.channelWrap}>
             <img className={styles.channelIcon} src={channel[0].snippet.thumbnails.medium.url} alt='' />

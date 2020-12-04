@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import PlayMyList from '../play_my_list/play_my_list';
 import PlayRelateList from '../play_relate_list/play_relate_list';
 import classNames from 'classnames';
 import styles from './play_list.module.css';
 
-const PlayList = ({ videos, handleVideo, myItems }) => {
+const PlayList = memo(({ videos, handleVideo, myItems, addMyItem }) => {
   const [listClass, setListClass] = useState(true);
   const listNameWrap = useRef();
 
@@ -32,6 +32,7 @@ const PlayList = ({ videos, handleVideo, myItems }) => {
         videos={videos} //
         handleVideo={handleVideo}
         listClass={listClass}
+        addMyItem={addMyItem}
       />
       <PlayMyList
         videos={videos} //
@@ -41,6 +42,6 @@ const PlayList = ({ videos, handleVideo, myItems }) => {
       />
     </div>
   );
-};
+});
 
 export default PlayList;

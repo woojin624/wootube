@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, Component } from 'react';
+import React, { useEffect, useRef, useState, Component, memo } from 'react';
 import MainVideoItem from '../main_video_item/main_video_item';
 import classNames from 'classnames';
 import styles from './main_video_list.module.css';
@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 // 기본 상태에서 리스트가 보이며 돋보기에 포커싱이 되었을 때
 // 리스트의 높이가 낮아지며 오버플로우에 가려져 보이지 않게된다.
 
-const MainVideoList = ({ videos, focus, handleVideo }) => {
+const MainVideoList = memo(({ videos, focus, handleVideo }) => {
   // -----업데이트 된 focus를 전달 받는 방법을 찾아야한다
   // console.log(focus);
 
@@ -115,6 +115,6 @@ const MainVideoList = ({ videos, focus, handleVideo }) => {
       </div>
     </section>
   );
-};
+});
 
 export default MainVideoList;

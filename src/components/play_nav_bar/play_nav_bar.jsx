@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 import styles from './play_nav_bar.module.css';
 
 // 부모 컴포넌트로부터 history를 받아와서 logo가 onClick시 history.push('/')가 작동하도록 함
-const PlayNavBar = ({ history, getValue, handleValue }) => {
+const PlayNavBar = memo(({ history, getValue, handleValue }) => {
   const inputRef = useRef();
   let value;
   const onClick = () => {
@@ -59,6 +59,6 @@ const PlayNavBar = ({ history, getValue, handleValue }) => {
       </nav>
     </header>
   );
-};
+});
 
 export default PlayNavBar;

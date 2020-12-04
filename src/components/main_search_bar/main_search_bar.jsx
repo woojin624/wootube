@@ -1,11 +1,11 @@
 import styles from './main_search_bar.module.css';
 import classNames from 'classnames';
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 
 // 메인화면에서 보이는 로고와 검색창을 담당하는 컴포넌트이다
 
 // 부모 컴포넌트로부터 history를 받아와서 button이 onClick시 history.push('/search')가 작동하도록 함
-const MainSearchBar = ({ history, handleClass, handleValue }) => {
+const MainSearchBar = memo(({ history, handleClass, handleValue }) => {
   // history가 나온다
   // console.log(history);
   const searchWrap = useRef();
@@ -80,6 +80,5 @@ const MainSearchBar = ({ history, handleClass, handleValue }) => {
       </div>
     </header>
   );
-};
-
+});
 export default MainSearchBar;

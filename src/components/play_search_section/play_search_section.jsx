@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import styles from './play_search_section.module.css';
 
-const PlaySearchSection = ({ onSearch }) => {
+const PlaySearchSection = memo(({ onSearch }) => {
   const inputRef = useRef();
   const handleSearch = () => {
     const value = inputRef.current.value;
@@ -26,6 +26,6 @@ const PlaySearchSection = ({ onSearch }) => {
       </button>
     </div>
   );
-};
+});
 
 export default PlaySearchSection;

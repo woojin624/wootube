@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import PlayRelateItem from '../play_relate_item/play_relate_item';
 import classNames from 'classnames';
 import styles from './play_relate_list.module.css';
 
-const PlayRelateList = ({ videos, handleVideo, listClass }) => {
+const PlayRelateList = memo(({ videos, handleVideo, listClass, addMyItem }) => {
   // console.log(listClass);
 
   const list = useRef();
@@ -23,10 +23,10 @@ const PlayRelateList = ({ videos, handleVideo, listClass }) => {
   return (
     <ul ref={list} className={classNames(styles.list, styles.active)}>
       {videos.map((video) => (
-        <PlayRelateItem key={video.id} video={video} onVideoClick={handleVideo} />
+        <PlayRelateItem key={video.id} video={video} onVideoClick={handleVideo} addMyItem={addMyItem} />
       ))}
     </ul>
   );
-};
+});
 
 export default PlayRelateList;
