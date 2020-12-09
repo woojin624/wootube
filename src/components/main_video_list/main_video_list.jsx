@@ -105,13 +105,13 @@ const MainVideoList = memo(({ videos, focus, handleVideo }) => {
             </li>
           </ul>
         </nav>
-        <nav className={styles.dotnav}>
+        {/* <nav className={styles.dotnav}>
           <ul>
             {dotNavs.map((dotNav) => (
               <MainDot key={dotNav} dotClick={onDotClick} />
             ))}
           </ul>
-        </nav>
+        </nav> */}
       </div>
     </section>
   );
