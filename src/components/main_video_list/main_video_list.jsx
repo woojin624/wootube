@@ -1,10 +1,7 @@
-import React, { useEffect, useRef, useState, Component, memo } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import MainVideoItem from '../main_video_item/main_video_item';
 import classNames from 'classnames';
 import styles from './main_video_list.module.css';
-import MainDot from './main_dot';
-// import styled from 'styled-components';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -14,7 +11,6 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const MainVideoList = memo(({ videos, focus, handleVideo }) => {
   // -----업데이트 된 focus를 전달 받는 방법을 찾아야한다
-  // console.log(focus);
 
   let wrapClassFocus = focus;
   // section.videolistWrap을 ref로 받아온다
@@ -28,7 +24,6 @@ const MainVideoList = memo(({ videos, focus, handleVideo }) => {
     } else if (wrapClassFocus === true) {
       videolistWrap.current.className = `${classNames(styles.videolistWrap)}`;
     }
-    // console.log(className);
   };
   // focus가 업데이트되고 videolistActive()함수를 실행시키기 위해 useEffect() 사용
   useEffect(() => {
@@ -42,9 +37,7 @@ const MainVideoList = memo(({ videos, focus, handleVideo }) => {
 
   // videolist, dotNavEls를 ref로 받아온다
   const videolist = useRef();
-  const dotNavEls = useRef([]);
 
-  // console.log(dotNavEls);
   let slideId = 1;
 
   // 좌우 화살표의 기능을 맡는 함수
@@ -68,22 +61,6 @@ const MainVideoList = memo(({ videos, focus, handleVideo }) => {
   // ul태그 안에서는 props로 받아온 videos를 map을 통해 각각 MainVideoItem에 id를 부여해준다
   // MainVideoItem에서 생성된 li들로 슬라이더를 채운다
 
-  const onDotClick = (e) => {
-    console.log(e.currentTarget);
-    console.log(dotNavs);
-  };
-
-  const dotNavs = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  // dotNavs.length = 10;
-  // const dotNavList = dotNavs.map((dotNav) => (
-  //   <li>
-  //     <span onClick={onDotClick} ref={dotNavEls} key={dotNav} className={styles.dot}>
-  //       &nbsp;
-  //     </span>
-  //   </li>
-  // ));
-  // console.log(dotNavList);
-
   return (
     <section ref={videolistWrap} className={styles.videolistWrap}>
       <div className={styles.sliderContainer}>
@@ -105,13 +82,6 @@ const MainVideoList = memo(({ videos, focus, handleVideo }) => {
             </li>
           </ul>
         </nav>
-        {/* <nav className={styles.dotnav}>
-          <ul>
-            {dotNavs.map((dotNav) => (
-              <MainDot key={dotNav} dotClick={onDotClick} />
-            ))}
-          </ul>
-        </nav> */}
       </div>
     </section>
   );

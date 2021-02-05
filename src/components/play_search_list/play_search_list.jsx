@@ -4,7 +4,6 @@ import SearchVideoItem from '../search_video_item/search_video_item';
 import styles from './play_search_list.module.css';
 
 const PlaySearchList = memo(({ videos, handleVideo, youtube, addMyItem }) => {
-  console.log(videos);
   return (
     <>
       {videos && (

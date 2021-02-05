@@ -19,8 +19,8 @@ const PlayVideoScreen = memo(({ videoId, channelId, youtube }) => {
       .then((channel) => setChannel(channel));
   }, [videoId, channelId, youtube]);
 
-  // channel && console.log("새로운 채널의 Id : ", channel[0].id);
-  // video && console.log('새로운 비디오의 Id : ', video[0].id);
+  // channel && console.log('새로운 채널의 Id : ', channel[0]);
+  // video && console.log('새로운 비디오의 Id : ', video[0]);
 
   // 설명부분
   const desc = useRef();

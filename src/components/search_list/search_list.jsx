@@ -8,6 +8,7 @@ import styles from './search_list.module.css';
 // 부모 컴포넌트로부터 props를 받아오며 받아온 props의 videos를 map을 통해 빙글빙글 돌며 하나의 비디오마다 id를 설정해준다
 
 const SearchList = memo(({ videos, handleVideo, addMyItem }) => {
+  // console.log(videos);
   return (
     <ul className={styles.list}>
       {videos.map((video) => (

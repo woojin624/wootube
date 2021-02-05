@@ -16,7 +16,7 @@ const MainVideoItem = memo(({ video, onVideoClick }) => {
   return (
     <li className={styles.video} onClick={clickVideo}>
       <figure className={styles.thumbWrap}>
-        <img className={styles.thumbnail} src={video.snippet.thumbnails.standard.url} alt='video thumbnails' />
+        <img className={styles.thumbnail} src={video.snippet.thumbnails.high.url} alt='video thumbnails' />
       </figure>
       <div className={styles.info}>
         <p className={styles.title}>{decode(video.snippet.title)}</p>

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './play_my_list.module.css';
 import PlayMyItem from '../play_my_item/play_my_item';
 
-const PlayMyList = memo(({ videos, onVideoClick, listClass, handleVideo, myItems, delMyItem }) => {
+const PlayMyList = memo(({ listClass, handleVideo, myItems, delMyItem }) => {
   // console.log(listClass);
 
   const list = useRef();
@@ -20,12 +20,7 @@ const PlayMyList = memo(({ videos, onVideoClick, listClass, handleVideo, myItems
     listActive();
   }, [listClass]);
 
-  let decode = require('unescape');
-  const clickVideo = () => {
-    // onVideoClick(videos);
-    window.scrollTo(0, 0);
-  };
-  console.log(myItems);
+  // console.log(myItems);
   return (
     <ul ref={list} className={styles.list}>
       {myItems && myItems.length > 0 && myItems.map((myItem) => <PlayMyItem key={myItem.id} myItem={myItem} onVideoClick={handleVideo} delMyItem={delMyItem} />)}
